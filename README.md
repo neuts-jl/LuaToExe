@@ -40,9 +40,9 @@ Compiled with  [xxxx](https://github.com/neuts-jl/xxxx)
       argv[n]                        Parameter n value
 ```
 
-## demonstration :
+## Demonstration :
 
-LuatoExe demo-form
+Command line : LuatoExe demo-form
 
 See [lualibconsole](https://github.com/neuts-jl/lualibconsole) 
 
