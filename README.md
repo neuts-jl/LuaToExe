@@ -7,7 +7,7 @@ LUA unit, searches for "require" and dependencies,
 it automatically includes the necessary modules. It can also
 integrate other types of files: DLL, Exe, images... The work is
 simplified by adding pre-compilation directives. 
-Compiled with  [xxxx](https://github.com/neuts-jl/xxxx) 
+Compiled with  [RuntimeResources]https://github.com/neuts-jl/RuntimeResources) 
 
 ## Command line help :
 ```
