@@ -10,6 +10,7 @@ simplified by adding pre-compilation directives.
 Compiled with  [xxxx](https://github.com/neuts-jl/xxxx) 
 
 ## Command line help :
+```
       LuaToExe version V1.2.0
       Copyright (c) 2008-2025, Neuts JL (http://www.neuts.fr)
 
@@ -37,6 +38,7 @@ Compiled with  [xxxx](https://github.com/neuts-jl/xxxx)
       _APP_NAME                      Executable name
       argv[0]                        Parameter 0 value
       argv[n]                        Parameter n value
+```
 
 ## demonstration :
 
