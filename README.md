@@ -12,7 +12,7 @@ simplified by adding pre-compilation directives.
 Compiled with  [RuntimeResources](https://github.com/neuts-jl/RuntimeResources)
 
 ## Binaries 
-[![SourceForge](https://img.shields.io/badge/SourceForge-Download-orange)](https://sourceforge.net/projects/LuatoExec/)
+[![SourceForge](https://img.shields.io/badge/SourceForge-Download-orange)](https://sourceforge.net/projects/luatoexe/files/latest/download)
 
 ## Demonstration :
 Command line : LuatoExe demo-form
