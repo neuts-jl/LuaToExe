@@ -1,6 +1,6 @@
 {
   *****************************************************************************
-   Unit        : readkey
+   Program     : LuaToExe
    Author      : NEUTS JL
    License     : GPL (GNU General Public License)
    Date        : 10/02/2025
