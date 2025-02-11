@@ -8,8 +8,8 @@ it automatically includes the necessary modules. It can also
 integrate other types of files: DLL, Exe, images... The work is
 simplified by adding pre-compilation directives. 
 
-## Dependances
-Compiled with  [RuntimeResources](https://github.com/neuts-jl/RuntimeResources)
+## Dependencies
+Compiled under LAZARUS with my lib [RuntimeResources](https://github.com/neuts-jl/RuntimeResources)
 
 ## Binaries 
 [![SourceForge](https://img.shields.io/badge/SourceForge-Download-orange)](https://sourceforge.net/projects/luatoexe/files/latest/download)
@@ -18,7 +18,6 @@ Compiled with  [RuntimeResources](https://github.com/neuts-jl/RuntimeResources)
 Command line : LuatoExe demo-form
 
 See [lualibconsole](https://github.com/neuts-jl/lualibconsole) 
-
 
 
 ## Command line help :
