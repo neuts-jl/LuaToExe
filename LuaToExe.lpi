@@ -35,7 +35,7 @@
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="..\..\..\libs\include\common\uresourceexe.pas"/>
+        <Filename Value="..\..\..\libs\include\RuntimeResources\uresourceexe.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
     </Units>
@@ -48,7 +48,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="F:\lazarus\official\libs\include\common\"/>
+      <OtherUnitFiles Value="..\..\..\libs\include\RuntimeResources"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>

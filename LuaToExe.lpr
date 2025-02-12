@@ -35,23 +35,30 @@ program LuaToExe;
 
 uses
   {$IFDEF UNIX}
-  cthreads,
+    cthreads,
   {$ENDIF}
-  Windows,
+  {$IFDEF WINDOWS}
+    Windows,
+  {$ENDIF}
   Classes,
   SysUtils,
   fileutil,
   CustApp,
-  uresourceexe,
-  process;
+  process,
+  uresourceexe;
 
 Const
   KVersion='V1.2.0';
 
-{$IFDEF WIN64}
-  {$R luatoexe-64.res}
-{$ELSE}
-  {$R luatoexe-32.res}
+{$IFDEF WINDOWS}
+  {$IFDEF WIN64}
+    {$R luatoexe-win64.res}
+  {$ELSE}
+    {$R luatoexe-win32.res}
+    {$ENDIF}
+{$ENDIF}
+{$IFDEF UNIX}
+  {$R luatoexe-linux64.res}
 {$ENDIF}
 
 type
@@ -440,7 +447,8 @@ var
 begin
   {$IFDEF UNIX}
      fpSignal(SIGINT, @SignalCtrlHandler);
-  {$ELSE}
+  {$ENDIF}
+  {$IFDEF WINDOWS}
     SetConsoleCtrlHandler(@ConsoleCtrlHandler, True);
   {$ENDIF}
   Application := TMyApplication.Create(nil);
