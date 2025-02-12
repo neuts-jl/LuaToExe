@@ -57,6 +57,7 @@ Const
     {$R luatoexe-win32.res}
     {$ENDIF}
 {$ENDIF}
+
 {$IFDEF UNIX}
   {$R luatoexe-linux64.res}
 {$ENDIF}
