@@ -33,9 +33,14 @@
       <Unit>
         <Filename Value="LuaToExe.lpr"/>
         <IsPartOfProject Value="True"/>
+        <UnitName Value="luatoexew"/>
       </Unit>
       <Unit>
         <Filename Value="..\..\..\libs\include\RuntimeResources\uresourceexe.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="main.inc"/>
         <IsPartOfProject Value="True"/>
       </Unit>
     </Units>
@@ -47,7 +52,7 @@
       <Filename Value="bin\$(TargetOS)\LuaToExe"/>
     </Target>
     <SearchPaths>
-       <IncludeFiles Value="$(ProjOutDir)"/>
+      <IncludeFiles Value="$(ProjOutDir)"/>
       <OtherUnitFiles Value="..\..\..\libs\include\RuntimeResources"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
