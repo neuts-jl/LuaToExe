@@ -44,7 +44,12 @@ See [lualibconsole](https://github.com/neuts-jl/lualibconsole)
         -v,         --version        Display version information
 
       In LUA file, for use :
+      require("lib.utils")           lib/utils.lua (or lib/utils/init.lua) is
+                                     added automatically
       --#include "datafile"          Import data file in executable
+      --#icon "file.ico"             Icon of the executable
+      Paths are relative to the directory of the main script and are kept
+      in the executable (lib/utils.lua -> _DATA_PATH..'lib/utils.lua')
       _DATA_PATH                     Data path
       _APP_PATH                      Executable path
       _APP_FILE                      Executable file
@@ -52,6 +57,29 @@ See [lualibconsole](https://github.com/neuts-jl/lualibconsole)
       argv[0]                        Parameter 0 value
       argv[n]                        Parameter n value
 ```
+
+## Modules, files and directives
+
+- **Root directory** : the directory of the main (first) script. All the
+  embedded files must be in it or in its sub-directories. Their relative
+  path is kept in the exe and recreated in `_DATA_PATH` at run time, so the
+  program finds its files exactly as when it is run with `lua main.lua` from
+  the root directory.
+- **require** : `require("lib.utils")` adds `lib/utils.lua` or
+  `lib/utils/init.lua`. `require` in comments or strings is ignored. A module
+  that is not found (`iuplua`, a standard or C module) is shown as
+  `Extern module` and is expected from the runtime. A name computed at run
+  time (`require(name)`) cannot be detected : add the file with `--#include`.
+- **--#include "file"** : adds any file (data, image, Lua module...).
+- **--#icon "file.ico"** : sets the icon of the generated exe (Windows).
+  Only one icon per program. The icon is also put on the embedded
+  interpreter (`wlua.exe` / `lua.exe`, resource `IUP_ICON`), and with
+  LuaToExeW every `iup.dialog` without an `icon` attribute gets it (title
+  bar, Alt+Tab, taskbar). `_APP_ICON` contains `'IUP_ICON'` (or `nil`) to
+  set it on other IUP elements. Not possible when LuaToExe itself is compressed
+  with UPX : use an uncompressed LuaToExe (`upx -d LuaToExe.exe`).
+- **Exit code** : the generated exe returns the exit code of the Lua program
+  (`os.exit(n)`, 1 on error). LuaToExe returns 1 when the build fails.
 
 ## LuaToExeW : Windows applications (IUP)
 
@@ -97,10 +125,11 @@ loaded with `require("iuplua")`.
    ```
 
 Example `testwin.lua` : a window with an image, an OK button that shows a
-message and a Close button.
+message and a Close button. `testwin.exe` gets the icon `testwin.ico`.
 
 ```lua
 --#include "testwin.bmp"
+--#icon "testwin.ico"
 
 local iup = require("iuplua")
 iup.SetGlobal("UTF8MODE", "YES")
